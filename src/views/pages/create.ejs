@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% var dir = process.cwd() %> <%- include(dir +
+  "/src/views/partials/head.ejs") %>
+  <body>
+    <%- include(dir + "/src/views/partials/navbar.ejs") %>
+    <div class="container">
+      <form class="create-story-form" method="post" action="/stories/store" enctype="multipart/form-data">
+        <div class="mb5px">
+          <label for="name" class="form-label label-item">Name</label>
+          <input type="text" class="form-control input-item" name="name" />
+        </div>
+        <div class="mb5px">
+          <label for="name" class="form-label label-item">Tên khác</label>
+          <input type="text" class="form-control input-item" name="other_name" />
+        </div>
+        <div class="mb5px">
+          <label for="author" class="form-label label-item">Author</label>
+          <input type="text" class="form-control input-item" name="author" />
+        </div>
+        <div class="mb5px">
+          <label for="select" class="form-label label-item">Trạng thái</label>
+          <select
+            class="form-select input-item"
+            aria-label="status"
+            name="status"
+          >
+            <option value="Đang tiến hành" selected>Đang tiến hành</option>
+            <option value="Đã hoàn thành">Đã hoàn thành</option>
+            <option value="Sắp phát hành">Sắp phát hành</option>
+          </select>
+        </div>
+        <div class="mb5px">
+          <label for="checkBox" class="form-label label-item">Thể loại</label>
+          <div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Action"
+                name="genres"
+                id="action"
+              />
+              <label class="form-check-label" for="action"> Action </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Adventure"
+                name="genres"
+                id="adventure"
+              />
+              <label class="form-check-label" for="adventure"> Adventure </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Chuyển sinh"
+                name="genres"
+                id="chuyen-sinh"
+              />
+              <label class="form-check-label" for="chuyen-sinh">
+                Chuyển sinh
+              </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Cổ đại"
+                name="genres"
+                id="co-dai"
+              />
+              <label class="form-check-label" for="co-dai"> Cổ đại </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Comic"
+                name="genres"
+                id="comic"
+              />
+              <label class="form-check-label" for="comic"> Comic </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Drama"
+                name="genres"
+                id="drama"
+              />
+              <label class="form-check-label" for="drama"> Drama </label>
+            </div>
+          </div>
+          <div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Fantasy"
+                name="genres"
+                id="fantasy"
+              />
+              <label class="form-check-label" for="fantasy"> Fantasy </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Historical"
+                name="genres"
+                id="historical"
+              />
+              <label class="form-check-label" for="historical">
+                Historical
+              </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Horror"
+                name="genres"
+                id="horror"
+              />
+              <label class="form-check-label" for="horror"> Horror </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Manga"
+                name="genres"
+                id="manga"
+              />
+              <label class="form-check-label" for="manga"> Manga </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Live action"
+                name="genres"
+                id="live-action"
+              />
+              <label class="form-check-label" for="live-action">
+                Live action
+              </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Manhua"
+                name="genres"
+                id="manhua"
+              />
+              <label class="form-check-label" for="manhua"> Manhua </label>
+            </div>
+          </div>
+          <div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Manhwa"
+                name="genres"
+                id="manhwa"
+              />
+              <label class="form-check-label" for="manhwa"> Manhwa </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Mystery"
+                name="genres"
+                id="mystery"
+              />
+              <label class="form-check-label" for="mystery"> Mystery </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Psychological"
+                name="genres"
+                id="psychological"
+              />
+              <label class="form-check-label" for="psylogical">
+                Psychological
+              </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Sci-fi"
+                name="genres"
+                id="sci-fi"
+              />
+              <label class="form-check-label" for="sci-fi"> Sci-fi </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="School life"
+                name="genres"
+                id="school-life"
+              />
+              <label class="form-check-label" for="school-life">
+                School Life
+              </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Romance"
+                name="genres"
+                id="romance"
+              />
+              <label class="form-check-label" for="romance"> Romance </label>
+            </div>
+          </div>
+          <div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Sports"
+                name="genres"
+                id="sports"
+              />
+              <label class="form-check-label" for="sports"> Sports </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Thiếu nhi"
+                name="genres"
+                id="thieu-nhi"
+              />
+              <label class="form-check-label" for="thieu-nhi"> Thiếu nhi </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Truyện scan"
+                name="genres"
+                id="truyen-scan"
+              />
+              <label class="form-check-label" for="truyen-scan">
+                Truyện scan
+              </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Truyện màu"
+                name="genres"
+                id="truyen-mau"
+              />
+              <label class="form-check-label" for="truyen-mau">
+                Truyện màu
+              </label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="Trinh thám"
+                name="genres"
+                id="trinh-tham"
+              />
+              <label class="form-check-label" for="trinh-tham">
+                Trinh thám
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="mb5px">
+          <label for="description" class="form-label label-item"
+            >Description</label
+          >
+          <textarea
+            type="text"
+            class="form-control input-item"
+            name="description"
+            row="3"
+          ></textarea>
+        </div>
+        <div class="mb5px">
+          <label for="url" class="form-label label-item">URL</label>
+          <input type="file" class="form-control input-item" name="file" />
+        </div>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+      </form>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

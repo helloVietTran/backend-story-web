@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <% var dir = process.cwd() %> <%- include(dir +
+  "/src/views/partials/head.ejs") %>
+  <body>
+    <%- include(dir + "/src/views/partials/navbar.ejs") %>
+    <div class="container">
+      <form class="create-story-form" method="post" action="/avatar-border/store" enctype="multipart/form-data">
+        <div class="mb5px">
+          <label for="expiry" class="form-label label-item">Expiry</label>
+          <input type="expiry" class="form-control input-item" name="expiry" />
+        </div>
+        <div class="mb5px">
+          <label for="price" class="form-label label-item">Price</label>
+          <input type="price" class="form-control input-item" name="price" />
+        </div>
+     
+        <div class="mb5px">
+          <label for="url" class="form-label label-item">URL</label>
+          <input type="file" class="form-control input-item" name="file" />
+        </div>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+      </form>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
